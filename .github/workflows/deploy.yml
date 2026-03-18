@@ -14,14 +14,15 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Package WordPress files
-        run: |
-          tar --exclude='.git' \
-              --exclude='.github' \
-              --exclude='wp-config.php' \
-              --exclude='wp-content/uploads' \
-              --exclude='.env' \
-              --exclude='.env.*' \
-              -czf wordpress-package.tar.gz .
+  	run: |
+    	 tar --exclude='.git' \
+             --exclude='.github' \
+      	     --exclude='wp-config.php' \
+             --exclude='wp-content/uploads' \
+             --exclude='.env' \
+             --exclude='.env.*' \
+             --exclude='wordpress-package.tar.gz' \
+             -czf wordpress-package.tar.gz .
 
       - name: Upload package artifact
         uses: actions/upload-artifact@v4
