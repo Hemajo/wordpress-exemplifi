@@ -66,6 +66,7 @@ jobs:
       - name: Deploy only changed files with rsync
         run: |
           rsync -avz --no-times --delete \
+            --rsync-path="sudo rsync" \
             --exclude='.git/' \
             --exclude='.github/' \
             --exclude='wp-config.php' \
